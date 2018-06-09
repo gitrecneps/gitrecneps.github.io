@@ -1,0 +1,98 @@
+<html>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+</style>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Responsive Image Grid</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <img src="images/freq.jpg" style="width:50%">
+    <img src="images/cycle.jpg" style="width:50%">
+    <img src="images/doll.jpg" style="width:50%">
+    <img src="images/tobaccois.jpg" style="width:50%">
+    <img src="/w3images/songspeech.jpg" style="width:50%">
+    <img src="/w3images/successive.jpg" style="width:50%">
+    <img src="/w3images/fox.jpg" style="width:50%">
+  </div>
+  <div class="column">
+    <img src="images/bachelor.jpg" style="width:100%">
+    <img src="images/fruit1.jpg" style="width:100%">
+    <img src="images/feetwarm.jpg" style="width:100%">
+    <img src="images/fruit5.jpg" style="width:100%">
+    <img src="images/nope.jpg" style="width:100%">
+    <img src="images/pikn.jpg" style="width:100%">
+  </div>  
+  <div class="column">
+    <img src="images/downohio.jpg" style="width:100%">
+    <img src="images/unpaved.jpg" style="width:100%">
+    <img src="images/unpaved-2.jpg" style="width:100%">
+    <img src="images/bullet.jpg" style="width:100%">
+    <img src="images/chairs.jpg" style="width:100%">
+    <img src="images/grandma.jpg" style="width:100%">
+    <img src="images/knob.jpg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/scare.jpg" style="width:100%">
+    <img src="images/secret.jpg style="width:100%">
+    <img src="images/shop.jpg" style="width:100%">
+    <img src="images/keys.jpg" style="width:100%">
+    <img src="images/manet.jpg" style="width:100%">
+    <img src="images/firetime.jpg" style="width:100%">
+  </div>
+</div>
+
+</body>
+</html>
