@@ -30,12 +30,25 @@ body {
     vertical-align: middle;
 }
 
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
 .button{
   background:#000;
   color:#fff;
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+  height:300px;
+  width: 300px;
   border: none;
 }
 
@@ -90,27 +103,6 @@ body {
   cursor:pointer;
 }
 
-@media (max-width: 800px) {
-    .column {
-        flex: 50%;
-        max-width: 50%;
-    }
-    .button {
-        flex: 50%;
-        max-width: 50%;
-    }
-}
-
-@media (max-width: 600px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
-    .button {
-        flex: 50%;
-        max-width: 50%;
-    }
-}
 @keyframes modalopen{
   from{ opacity: 0}
   to {opacity: 1}
