@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
-body {
+body{
   font-family: Proxima Nova;
+  font-size: 10px;
 }
 
 .header {
@@ -44,10 +45,42 @@ body {
     }
 }
 
-.button{
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 8888;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color:#f4f4f4;
+  margin: 20% auto;
+  width:70%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name:modalopen;
+  animation-duration:1s;
+}
+
+@media (min-width: 1366px) {
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10vh auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+  }
+}
+
+button.button {
   background:#000;
   color:#fff;
-  height:400px;
+  height:300px;
   width: 300px;
   border: none;
 }
@@ -57,59 +90,9 @@ body {
   color:#000;
   border: none;
 }
-
-.modal{
-  display:none;
-  position: fixed;
-  z-index:1;
-  left: 0;
-  top:0;
-  height: 100%;
-  width:100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content{
-  background-color:#f4f4f4;
-  margin: 20% auto;
-  width:70%;
-  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
-  animation-name:modalopen;
-  animation-duration:1s;
-}
-
-.modal-body{
-  padding-left:300px;
-  padding-right:300px;
-  padding-top:40px;
-  padding-bottom:10px;
-}
-
-.modal-header{
- padding-right: 15px;
- padding-top: 5px
-}
-
-.closeBtn{
-  color:#ccc;
-  float: right;
-  font-size:30px;
-  color:#000;
-}
-
-.closeBtn:hover,.closeBtn:focus{
-  color:#f4f4f4;
-  cursor:pointer;
-}
-
-@keyframes modalopen{
-  from{ opacity: 0}
-  to {opacity: 1}
-  }
 </style>
 
-  <body>
+ 
 <div class="row">
   <div class="column">
     <img src="images/freq.jpg" style="width:100%">
@@ -151,64 +134,25 @@ body {
   </div>
 </div>
 
-<button id="modalBtn" class="button"><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i></button>
+<button class="button" data-modal="#modalOne"><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i>
+  </button>
 
-<div id="simpleModal" class="modal">
+<button class="button" data-modal="#modalTwo">
+  <i>From Honey to Ashes,<br>Claude Lévi-Strauss</i>
+  </button>
+
+<div id="modalOne" class="modal">
   <div class="modal-content">
-    <div class="modal-header">
-      <span class="closeBtn">&times;</span>
-      <div class="modal-body">
-        <i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i>
-        <p>A provision of endless apparatus, a bustle of infinite inquiry and research, may be employed to evade and shuffle off real labor--the real labor of thinking.
-          <hr width="50%" align="left">
-          </hr>
-        </p>
-        <p>
-          When it is said, therefore, that a librarian is a keeper of books, it must be determined first of which of these two books he is the keeper. Is he, for example, the keeper of the small, clothbound object [. . .], or is he the keeper of that very different
-          object created in many mens minds before, and now in yours, by this--these words, these symbols, images, perceptions [. . .].
-        </p>
-        <p>
-          It makes a difference whether the book is the cloth and paper or the intellectual image. If it is the physical book of which the librarian is the keeper, then the character of his profession is obvious enough. He is a custodian as all keepers of physical
-          objects are custodians, and his obligations are a custodian’s obligations. He is a sort of check boy in a parcel room of culture. His duty is to receive the priceless packages confided to him by the past and to redeliver them to the future against
-          the proper stub. To perform that obligation he must be reliable, orderly, industrious, and clever. He must devise infallible and complicated ticket systems to find the parcels on the shelves. He must read the notations of origin and ownership
-          in a dozen tongues. He must guard the wrappers from the risks of time and theft. And matches an men’s thumbs. He must be courteous and patient with the claimants. And for the rest he has no duty but to wait. If no one comes, if no one questions,
-          he can wait.
-        </p>
-        <p>
-          But if it is not the physical book but the intellectual book of which the librarian is keeper, then his profession is a profession of a very different kind. It is not the profession of the custodian, for the intellectual book is not a ticketed parcel
-          which can be preserved by keeping it from mice and mildew on the shelf. The intellectual book is an imagined object in the mind which can be preserved only by preserving the minds perception of its presence. Neither is the librarians profession
-          the profession of the check boy who receives and guards and redilivers,--receives from the past, guards again the present, and redelivers to the future,--for the intellectual book is not a deposit of the past which the future has a right to
-          call and claim. The intellectual book is a construction of the spirit, and the constructions of the spirit exist in one time only--in that continuing and endless present which is Now. If it is the intellectual book rather than the physical book
-          of which the librarian is a keeper, then the profession of the librarian is not and cannot be the neutral, passive, negative profession of the guardian and fiduciary, but must become instead the affirmative and advocating profession of the attorney
-          for a cause. For the intellectual book is the Word. And the keepers of the Word, whether they so choose or not, must be its partisans and advocates. The Word was never yet protected by keeping it in storage in a warehouse: the preservation of
-          the Word is now, as it has always been, a cause--perhaps the greatest--not, I think, the least in danger in this time.
-        </p>
-      </div>
+    <div class="contact-form">
+      <h2><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i>
+        
+<p>A provision of endless apparatus, a bustle of infinite inquiry and research, may be employed to evade and shuffle off real labor--the real labor of thinking.<hr width="50%" align="left"></hr></p>
+        
+<p>When it is said, therefore, that a librarian is a keeper of books, it must be determined first of which of these two books he is the keeper. Is he, for example, the keeper of the small, clothbound object [. . .], or is he the keeper of that very different object created in many mens minds before, and now in yours, by this--these words, these symbols, images, perceptions [. . .].</p>
+
+<p>It makes a difference whether the book is the cloth and paper or the intellectual image. If it is the physical book of which the librarian is the keeper, then the character of his profession is obvious enough. He is a custodian as all keepers of physical objects are custodians, and his obligations are a custodian’s obligations. He is a sort of check boy in a parcel room of culture. His duty is to receive the priceless packages confided to him by the past and to redeliver them to the future against the proper stub. To perform that obligation he must be reliable, orderly, industrious, and clever. He must devise infallible and complicated ticket systems to find the parcels on the shelves. He must read the notations of origin and ownership in a dozen tongues. He must guard the wrappers from the risks of time and theft. And matches an men’s thumbs. He must be courteous and patient with the claimants. And for the rest he has no duty but to wait. If no one comes, if no one questions, he can wait.</p>
+
+<p>But if it is not the physical book but the intellectual book of which the librarian is keeper, then his profession is a profession of a very different kind. It is not the profession of the custodian, for the intellectual book is not a ticketed parcel which can be preserved by keeping it from mice and mildew on the shelf. The intellectual book is an imagined object in the mind which can be preserved only by preserving the minds perception of its presence. Neither is the librarians profession the profession of the check boy who receives and guards and redilivers,--receives from the past, guards again the present, and redelivers to the future,--for the intellectual book is not a deposit of the past which the future has a right to call and claim. The intellectual book is a construction of the spirit, and the constructions of the spirit exist in one time only--in that continuing and endless present which is Now. If it is the intellectual book rather than the physical book of which the librarian is a keeper, then the profession of the librarian is not and cannot be the neutral, passive, negative profession of the guardian and fiduciary, but must become instead the affirmative and advocating profession of the attorney for a cause. For the intellectual book is the Word. And the keepers of the Word, whether they so choose or not, must be its partisans and advocates. The Word was never yet protected by keeping it in storage in a warehouse: the preservation of the Word is now, as it has always been, a cause--perhaps the greatest--not, I think, the least in danger in this time.</p></h2>
     </div>
   </div>
 </div>
-<button id="modalBtn" class="button"><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i></button>
-
-<div id="simpleModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="closeBtn">&times;</span>
-      <div class="modal-body">
-        <i>From Honey to Ashes,<br>Claude Lévi-Strauss</i>
-        <p>The person attacked very soon becomes infuriated by tickling sensations occuring in particularly sensitive spots--inside the ears and nostrils and in the corners of the eyes and mouth--and which it is impossible to put a stop to by means of the sudden movements we normally use to drive insects away. The bees which become heavy and, as it were, drunk with human food seem to lose the desire, and perhaps even the ability, to fly away. Their victim, weary of beating the air to no purpose, is very soon driven to striking his face, a fatal move, because the squashed, sweat-laden corpses glue the surviving insects to the spot and act as a lure for others, which are attracted by the prospect of a further meal.
-          <hr width="50%" align="left">
-          </hr>
-        </p>
-        <p>
-          No doubt, the factors which determine the formation and the respective growth-rates of the different parts of the plant are present in the seed. But the dormancy of the seed, that is, the unforeseeable time which will elapse before the mechanism begins operating, does not depend upon its structure, but on an infinitely complex pattern of conditions relating to the individual history of each seed and all kinds of external influences.
-        </p>
-        <p>
-          The same is true of civilizations. Those which we term primitive do not differ from the others in their mental equipment but only by virtue of the fact that nothing in any mental equipment ordains that it should display its resource at a given time or utilize them in a certain direction. The fact that, on one occasion in human history and perhaps arbitrarily, as being the cause of subsequent events--although we cannot be sure of this, since there is not and never will be any term of comparison--does not give us authority to transmute one historical occurrence, which can have no meaning beyond its actual happening at that place and in that time, into a proof that such a development should be demandable in all places and at all times. If such were the case, it would be too easy to conclude that, wherever such an evolution has not taken place, its absence is to be explained by the inferiority or inadequacy of societies or individuals.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
- <script type="text/javascript" src="index.js"></script>
-  </body>
-</html>
