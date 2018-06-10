@@ -1,3 +1,4 @@
+alert("This is an alert I created in index.js!");
 $(".button").on("click", function() {
   var modal = $(this).data("modal");
   $(modal).show();
