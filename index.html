@@ -42,7 +42,7 @@
     }
 }
 
-.button {
+button.button {
   background: #000;
   font-family: Proxima Nova;
   font-size: 15px;
@@ -52,7 +52,7 @@
   border: none;
 }
 
-.button:hover{
+button.button:hover{
   background:#f4f4f4;
   font-family: Proxima Nova;
   font-size: 15px;
@@ -128,8 +128,8 @@
   </div>
 </div>
 
-<button class="button" id="myBtn1"><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i></button>
-<div id="myModal1" class="modal">
+<button class="button" data-modal="modalOne"><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i></button>
+<div id="modalOne" class="modal">
   <div class="modal-content">
 <h2><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i>
         
@@ -143,8 +143,8 @@
   </div>
 </div>
 
-<button class="button" id="myBtn2"><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i></button>
-<div id="myModal2" class="modal">
+<button class="button" data-modal="modalTwo"><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i></button>
+<div id="modalTwo" class="modal">
   <div class="modal-content">
 <h2><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i>
         
@@ -156,33 +156,19 @@
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-var modal = document.getElementById('myModal1');
-var button = document.getElementById("myBtn1");
-
-button.onclick = function() {
-    modal.style.display = "block";
-}
+var modalBtns = [...document.querySelectorAll(".button")];
+modalBtns.forEach(function(btn){
+  btn.onclick = function() {
+    var modal = btn.getAttribute('data-modal');
+    document.getElementById(modal).style.display = "block";
+  }
+});
 
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-<script>
-var modal = document.getElementById('myModal2');
-var button = document.getElementById("myBtn2");
-
-button.onclick = function() {
-    modal.style.display = "block";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+  if (event.target.className === "modal") {
+    event.target.style.display = "none";
+  }
 }
 </script>
 </body>
