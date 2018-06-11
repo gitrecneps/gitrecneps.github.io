@@ -1,10 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+<style>
+*{
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.button {
+  background: #000;
+  font-family: Proxima Nova;
+  font-size: 15px;
+  color: #fff;
+  height: 400px;
+  width: 300px;
+  border: none;
+}
+
+.button:hover{
+  background:#f4f4f4;
+  font-family: Proxima Nova;
+  font-size: 15px;
+  color:#000;
+  border: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    font-family: Proxima Nova;
+    font-size: 10px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+</style>
 </head>
+
 <body>
 <div class="row">
   <div class="column">
@@ -47,7 +128,7 @@
   </div>
 </div>
 
-<button class="button" id="myBtn1">Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i></button>
+<button class="button" id="myBtn1">Open Modal</button>
 <div id="myModal1" class="modal">
   <div class="modal-content">
 <h2><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i>
@@ -61,5 +142,22 @@
 <p>But if it is not the physical book but the intellectual book of which the librarian is keeper, then his profession is a profession of a very different kind. It is not the profession of the custodian, for the intellectual book is not a ticketed parcel which can be preserved by keeping it from mice and mildew on the shelf. The intellectual book is an imagined object in the mind which can be preserved only by preserving the minds perception of its presence. Neither is the librarians profession the profession of the check boy who receives and guards and redilivers,--receives from the past, guards again the present, and redelivers to the future,--for the intellectual book is not a deposit of the past which the future has a right to call and claim. The intellectual book is a construction of the spirit, and the constructions of the spirit exist in one time only--in that continuing and endless present which is Now. If it is the intellectual book rather than the physical book of which the librarian is a keeper, then the profession of the librarian is not and cannot be the neutral, passive, negative profession of the guardian and fiduciary, but must become instead the affirmative and advocating profession of the attorney for a cause. For the intellectual book is the Word. And the keepers of the Word, whether they so choose or not, must be its partisans and advocates. The Word was never yet protected by keeping it in storage in a warehouse: the preservation of the Word is now, as it has always been, a cause--perhaps the greatest--not, I think, the least in danger in this time.</p></h2>
   </div>
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var modal = document.getElementById('myModal1');
+var button = document.getElementById("myBtn1");
+
+button.onclick = function() {
+    modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
