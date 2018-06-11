@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+  function myFunction() {
+    alert("I am an alert box!");
+}
+</script>
 <style>
 *{
     box-sizing: border-box;
@@ -24,12 +29,12 @@
 }
 
 .column img {
-    margin-top: 8px;
+    margin: 8px;
     vertical-align: middle;
 }
 
 .column button {
-    margin-top: 8px;
+    margin: 8px;
     vertical-align: middle;
 }
 
@@ -52,7 +57,7 @@ button.button {
   font-family: Proxima Nova;
   font-size: 15px;
   color: #fff;
-  height: 400px;
+  height: 300px;
   width: 300px;
   border: none;
 }
@@ -96,46 +101,55 @@ button.button:hover{
   <div class="column">
     <img src="images/freq.jpg" style="width:100%">
     <img src="images/cycle.jpg" style="width:100%">
+       <button class="button" data-modal="modalOne" style="width:100%"><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i></button>
     <img src="images/doll.jpg" style="width:100%">
     <img src="images/tobaccois.jpg" style="width:100%">
     <img src="images/songspeech.jpg" style="width:100%">
+    <button class="button" data-modal="modalTwo"style="width:100%"><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i></button>
     <img src="images/successive.jpg" style="width:100%">
     <img src="images/fox.jpg" style="width:100%">
+<button class="button" data-modal="modalThree" style="width:100%"><i>German Proverbs,<br>Edmund P. Kremer</i></button>
   </div>
   <div class="column">
     <img src="images/bachelor.jpg" style="width:100%">
     <img src="images/fruit1.jpg" style="width:100%">
+    <button class="button" data-modal="modalFour" style="width:100%"><i>Thinking Without Language,<br>Hans G. Furth</i></button>
     <img src="images/feetwarm.jpg" style="width:100%">
     <img src="images/fruit5.jpg" style="width:100%">
+<button class="button" data-modal="modalFive" style="width:100%"><i>Silico Sapiens,<br>Joseph Dekens</i></button>
     <img src="images/nope.jpg" style="width:100%">
     <img src="images/pikn.jpg" style="width:100%">
+    <button class="button" data-modal="modalSix" style="width:100%"><i>The Business of Criticism<br>Helen Gardner</i></button>
     <img src="images/uhoh.jpg" style="width:100%">
     <img src="images/chicken.jpg" style="width:100%">
   </div>
   <div class="column">
     <img src="images/downohio.jpg" style="width:100%">
     <img src="images/unpaved.jpg" style="width:100%">
+    <button class="button" data-modal="modalSeven" style="width:100%"><i>Fruit Tramps,<br>Herman LeRoy Emmet</i></button>
     <img src="images/unpaved-2.jpg" style="width:100%">
     <img src="images/bullet.jpg" style="width:100%">
+    <button class="button" data-modal="modalEight" style="width:100%"><i>The Neighbor,<br>Nathaniel S. Shaler</i></button>
     <img src="images/chairs.jpg" style="width:100%">
     <img src="images/grandma.jpg" style="width:100%">
+    <button class="button" data-modal="modalNine" style="width:100%"><i>The Lost Towns and Roads of America,<br>J.R. Humphreys</i></button>
     <img src="images/knob.jpg" style="width:100%">
     <img src="images/wordscommon1.jpg" style="width:100%">
   </div>
   <div class="column">
     <img src="images/scare.jpg" style="width:100%">
     <img src="images/secret.jpg" style="width:100%">
+    <button class="button" data-modal="modalTen" style="width:100%"><i>Runnin’ Down Some Lines<br>Edith A. Folb</i></button>
     <img src="images/shop.jpg" style="width:100%">
     <img src="images/keys.jpg" style="width:100%">
     <img src="images/manet.jpg" style="width:100%">
+    <button class="button" data-modal="modalEleven" style="width:100%"><i>Arts and Entertainment Fads<br>Frank W. Hoffmann and William G. Bailey</i></button>
     <img src="images/firetime.jpg" style="width:100%">
     <img src="images/atomic.jpg" style="width:100%">
+    <button class="button" data-modal="modalTwelve" style="width:100%"><i>Foolish Figleaves?,<br>Richard H. Kuh</i></button>
   </div>
 </div>
 
-<div class="row">
-<div class="column">
-<button class="button" data-modal="modalOne"><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i></button>
 <div id="modalOne" class="modal">
   <div class="modal-content">
 <h2><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i>
@@ -150,7 +164,6 @@ button.button:hover{
   </div>
 </div>
 
-<button class="button" data-modal="modalTwo"><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i></button>
 <div id="modalTwo" class="modal">
   <div class="modal-content">
 <h2><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i>
@@ -163,7 +176,6 @@ button.button:hover{
   </div>
 </div>
 
-<button class="button" data-modal="modalThree"><i>German Proverbs,<br>Edmund P. Kremer</i></button>
 <div id="modalThree" class="modal">
   <div class="modal-content">
 <h2><i>German Proverbs,<br>Edmund P. Kremer</i>
@@ -206,7 +218,6 @@ button.button:hover{
 </div>
 </div>
 
-<button class="button" data-modal="modalFour"><i>Thinking Without Language,<br>Hans G. Furth</i></button>
 <div id="modalFour" class="modal">
   <div class="modal-content">
 <h2><i>Thinking Without Language,<br>Hans G. Furth</i>
@@ -220,10 +231,7 @@ The foundation of any living experience, the most basic psychological act in the
 </h2>
 </div>
 </div>
-</div>
 
-<div class="column">
-<button class="button" data-modal="modalFive"><i>Silico Sapiens,<br>Joseph Dekens</i></button>
 <div id="modalFive" class="modal">
   <div class="modal-content">
 <h2><i>Silico Sapiens,<br>Joseph Dekens</i>
@@ -273,7 +281,6 @@ Even the most powerful knowledge representation is useless if it has no content 
 </div>
 </div>
 
-<button class="button" data-modal="modalSix"><i>The Business of Criticism<br>Helen Gardner</i></button>
 <div id="modalSix" class="modal">
   <div class="modal-content">
 <h2><i>The Business of Criticism<br>Helen Gardner</i>
@@ -292,7 +299,6 @@ Even the most powerful knowledge representation is useless if it has no content 
 </div>
 </div>
 
-<button class="button" data-modal="modalSeven"><i>Fruit Tramps,<br>Herman LeRoy Emmet</i></button>
 <div id="modalSeven" class="modal">
   <div class="modal-content">
 <h2><i>Fruit Tramps,<br>Herman LeRoy Emmet</i>
@@ -313,7 +319,6 @@ Even the most powerful knowledge representation is useless if it has no content 
 </div>
 </div>
 
-<button class="button" data-modal="modalEight"><i>The Neighbor,<br>Nathaniel S. Shaler</i></button>
 <div id="modalEight" class="modal">
   <div class="modal-content">
 <h2><i>The Neighbor,<br>Nathaniel S. Shaler</i>
@@ -353,10 +358,7 @@ Even the most powerful knowledge representation is useless if it has no content 
 </h2>
 </div>
 </div>
-</div>
 
-<div class="column">
-<button class="button" data-modal="modalNine"><i>The Lost Towns and Roads of America,<br>J.R. Humphreys</i></button>
 <div id="modalNine" class="modal">
   <div class="modal-content">
     <h2><i>The Lost Towns and Roads of America,<br>J.R. Humphreys</i>
@@ -396,7 +398,6 @@ Even the most powerful knowledge representation is useless if it has no content 
 </div>
 </div>
 
-<button class="button" data-modal="modalTen"><i>Runnin’ Down Some Lines<br>Edith A. Folb</i></button>
 <div id="modalTen" class="modal">
   <div class="modal-content">
     <h2><i>Runnin’ Down Some Lines,<br>Edith A. Folb</i>
@@ -421,7 +422,6 @@ Even the most powerful knowledge representation is useless if it has no content 
 </div>
 </div>
 
-<button class="button" data-modal="modalEleven"><i>Arts and Entertainment Fads<br>Frank W. Hoffmann and William G. Bailey</i></button>
 <div id="modalEleven" class="modal">
   <div class="modal-content">
     <h2><i>Arts and Entertainment Fads<br>Frank W. Hoffmann and William G. Bailey</i>
@@ -438,7 +438,6 @@ I am for an art that takes its form from the lines of life . . . and is sweet an
 </div>
 </div>
 
-<button class="button" data-modal="modalTwelve"><i>Foolish Figleaves?,<br>Richard H. Kuh</i></button>
 <div id="modalTwelve" class="modal">
   <div class="modal-content">
     <h2><i>Foolish Figleaves?,<br>Richard H. Kuh</i>
@@ -464,8 +463,6 @@ I am for an art that takes its form from the lines of life . . . and is sweet an
 <br>Olympia Reader
 </p>
 </h2>
-</div>
-</div>
 </div>
 </div>
 
