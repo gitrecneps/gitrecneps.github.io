@@ -143,11 +143,37 @@
   </div>
 </div>
 
+<button class="button" id="myBtn2"><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i></button>
+<div id="myModal2" class="modal">
+  <div class="modal-content">
+<h2><i>From Honey to Ashes,<br>Claude Lévi-Strauss</i>
+        
+<p>The person attacked very soon becomes infuriated by tickling sensations occuring in particularly sensitive spots--inside the ears and nostrils and in the corners of the eyes and mouth--and which it is impossible to put a stop to by means of the sudden movements we normally use to drive insects away. The bees which become heavy and, as it were, drunk with human food seem to lose the desire, and perhaps even the ability, to fly away. Their victim, weary of beating the air to no purpose, is very soon driven to striking his face, a fatal move, because the squashed, sweat-laden corpses glue the surviving insects to the spot and act as a lure for others, which are attracted by the prospect of a further meal.<hr width="50%" align="left"></hr></p>
+
+<p>No doubt, the factors which determine the formation and the respective growth-rates of the different parts of the plant are present in the seed. But the dormancy of the seed, that is, the unforeseeable time which will elapse before the mechanism begins operating, does not depend upon its structure, but on an infinitely complex pattern of conditions relating to the individual history of each seed and all kinds of external influences.</p>
+
+<p>The same is true of civilizations. Those which we term primitive do not differ from the others in their mental equipment but only by virtue of the fact that nothing in any mental equipment ordains that it should display its resource at a given time or utilize them in a certain direction. The fact that, on one occasion in human history and perhaps arbitrarily, as being the cause of subsequent events--although we cannot be sure of this, since there is not and never will be any term of comparison--does not give us authority to transmute one historical occurrence, which can have no meaning beyond its actual happening at that place and in that time, into a proof that such a development should be demandable in all places and at all times. If such were the case, it would be too easy to conclude that, wherever such an evolution has not taken place, its absence is to be explained by the inferiority or inadequacy of societies or individuals.</p></h2>
+  </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 var modal = document.getElementById('myModal1');
 var button = document.getElementById("myBtn1");
+
+button.onclick = function() {
+    modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+var modal = document.getElementById('myModal2');
+var button = document.getElementById("myBtn2");
 
 button.onclick = function() {
     modal.style.display = "block";
