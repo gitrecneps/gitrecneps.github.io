@@ -1,96 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
-body {font-family: Proxima Nova;}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.button {
+  background: #000;
+  font-family: Proxima Nova;
+  font-size: 15px;
+  color: #fff;
+  height: 400px;
+  width: 300px;
+  border: none;
 }
 
-/* Modal Content */
+.button:hover{
+  background:#f4f4f4;
+  font-family: Proxima Nova;
+  font-size: 15px;
+  color:#000;
+  border: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
 .modal-content {
-    background-color: #f4f4f4;
+    background-color: #fefefe;
+    font-family: Proxima Nova;
+    font-size: 10px;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
 }
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 </style>
 </head>
+
 <body>
-
-<h2>Modal Example</h2>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
+<button class="button" id="myBtn1">Open Modal</button>
+<div id="myModal1" class="modal">
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
+<h2><i>Landmarks of Library Literature 1876–1976,<br>Dianne J. Ellsworth and Norman D. Stevens</i>
+        
+<p>A provision of endless apparatus, a bustle of infinite inquiry and research, may be employed to evade and shuffle off real labor--the real labor of thinking.<hr width="50%" align="left"></hr></p>
+        
+<p>When it is said, therefore, that a librarian is a keeper of books, it must be determined first of which of these two books he is the keeper. Is he, for example, the keeper of the small, clothbound object [. . .], or is he the keeper of that very different object created in many mens minds before, and now in yours, by this--these words, these symbols, images, perceptions [. . .].</p>
 
+<p>It makes a difference whether the book is the cloth and paper or the intellectual image. If it is the physical book of which the librarian is the keeper, then the character of his profession is obvious enough. He is a custodian as all keepers of physical objects are custodians, and his obligations are a custodian’s obligations. He is a sort of check boy in a parcel room of culture. His duty is to receive the priceless packages confided to him by the past and to redeliver them to the future against the proper stub. To perform that obligation he must be reliable, orderly, industrious, and clever. He must devise infallible and complicated ticket systems to find the parcels on the shelves. He must read the notations of origin and ownership in a dozen tongues. He must guard the wrappers from the risks of time and theft. And matches an men’s thumbs. He must be courteous and patient with the claimants. And for the rest he has no duty but to wait. If no one comes, if no one questions, he can wait.</p>
+
+<p>But if it is not the physical book but the intellectual book of which the librarian is keeper, then his profession is a profession of a very different kind. It is not the profession of the custodian, for the intellectual book is not a ticketed parcel which can be preserved by keeping it from mice and mildew on the shelf. The intellectual book is an imagined object in the mind which can be preserved only by preserving the minds perception of its presence. Neither is the librarians profession the profession of the check boy who receives and guards and redilivers,--receives from the past, guards again the present, and redelivers to the future,--for the intellectual book is not a deposit of the past which the future has a right to call and claim. The intellectual book is a construction of the spirit, and the constructions of the spirit exist in one time only--in that continuing and endless present which is Now. If it is the intellectual book rather than the physical book of which the librarian is a keeper, then the profession of the librarian is not and cannot be the neutral, passive, negative profession of the guardian and fiduciary, but must become instead the affirmative and advocating profession of the attorney for a cause. For the intellectual book is the Word. And the keepers of the Word, whether they so choose or not, must be its partisans and advocates. The Word was never yet protected by keeping it in storage in a warehouse: the preservation of the Word is now, as it has always been, a cause--perhaps the greatest--not, I think, the least in danger in this time.</p></h2>
+  </div>
 </div>
 
 <script>
-// Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('myModal1');
+var button = document.getElementById("myBtn1");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
+button.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 </script>
-
 </body>
 </html>
